@@ -11,4 +11,4 @@ class Canhoto(models.Model):
         ordering = ('codigo',)
 
     def __str__(self):
-        return self.canhoto
+        return f'{self.codigo}'
