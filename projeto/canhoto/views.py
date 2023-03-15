@@ -6,6 +6,9 @@ from .forms import CanhotoForm
 def canhoto_list(request):
     template_name = 'canhoto_list.html'
     objects = Canhoto.objects.all()
+    search = request.GET.get('search')
+    if search:
+        objects = objects.filter(codigo__icontains=search) #icontains pesquisa por tudo aquilo que contenha o que é pesquisado.
     context = {'object_list': objects}
     return render(request, template_name, context)
 

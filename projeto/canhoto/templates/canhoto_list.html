@@ -14,7 +14,15 @@
             </a>
         </span>
     </h2>
-</br>
+
+<div class="row">
+    <div class="col-sm-6">
+        <form action="." method="get" class="form-inline">
+            <input class="form-control" type="text" name="search" id="search" placeholder="Buscar canhoto">
+            <input type="submit" class="btn btn-primary" value="Buscar" style="margin-left: 20px;">
+        </form>
+    </div>
+</div>
 
     {% if object_list %}
         <table class="table table-striped">
