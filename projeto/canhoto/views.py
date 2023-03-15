@@ -12,11 +12,12 @@ def canhoto_list(request):
     context = {'object_list': objects}
     return render(request, template_name, context)
 
-
+'''
 class CanhotoList(ListView):
     model = Canhoto
     template_name = 'canhoto_list.html'
-    paginate_by = 10
+    paginate_by = 6
+'''
 
 
 def canhoto_detail(request, pk):
