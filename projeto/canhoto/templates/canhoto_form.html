@@ -13,6 +13,9 @@
 
 {% block content %}
 
+<a href="{% url 'canhoto:canhoto_list' %}">Voltar</a>
+<h1>Adicionar canhoto</h1> 
+
   <form method="POST" novalidate>
     {% csrf_token %}
     {% for field in form.visible_fields %}

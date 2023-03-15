@@ -31,7 +31,8 @@
                 {% for object in object_list %}
                 <tr>
                     <td>
-                        <a href="{% url 'canhoto:canhoto_detail' object.pk %}">{{ object.codigo }}</a>
+                        <!-- {% url 'canhoto:canhoto_list' %} -->
+                        <a href="{{ object.get_absolute_url }}">{{ object.codigo }}</a>
                     </td>
                     <td> {{ object.data }} </td>
                     <td>R$<span>{{ object.valor }}</span></td>

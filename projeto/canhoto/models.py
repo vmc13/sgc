@@ -12,5 +12,8 @@ class Canhoto(models.Model):
         ordering = ('codigo',)
 
     def __str__(self):
-        return f'{self.codigo} '
+        return f'{self.codigo}'
+    
+    def get_absolute_url(self):
+        return reverse_lazy('canhoto:canhoto_detail', kwargs={'pk':self.pk})
     
