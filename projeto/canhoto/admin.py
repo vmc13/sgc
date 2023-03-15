@@ -6,7 +6,7 @@ class CanhotoAdmin(admin.ModelAdmin):
     list_display = (
         '__str__',
         'data',
-        'situacao',
         'valor',
+        'tipo',
     )
     search_fields=('codigo',)

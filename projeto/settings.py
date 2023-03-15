@@ -39,11 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # my apps
+    # apps terceiros
+    'widget_tweaks',
+    # minhas apps
     'projeto.core',
-    'projeto.canhoto',
-    'projeto.estoque',
-    
+    'projeto.canhoto',    
 ]
 
 MIDDLEWARE = [

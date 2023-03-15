@@ -3,19 +3,27 @@
 {% block content %}
 
 <div class="page-header">
-    <h2><i class="fa fa-folder-open"> Canhotos</i></h2>
+    <h2>
+        Lista de canhotos
+        <span class="pull-right">
+            <a href="{% url 'canhoto:canhoto_add' %}">
+              <button type="button" class="btn btn-primary">
+                  <span class="fa fa-plus"></span>
+                  Adicionar
+              </button>
+            </a>
+        </span>
+    </h2>
 </br>
 
-
- 
     {% if object_list %}
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Código</th>
                     <th>Data</th>
-                    <th>Situação</th>
                     <th>Valor</th>
+                    <th>Tipo</th>
                 </tr>
             </thead>
 
@@ -26,8 +34,8 @@
                         <a href="{% url 'canhoto:canhoto_detail' object.pk %}">{{ object.codigo }}</a>
                     </td>
                     <td> {{ object.data }} </td>
-                    <td> {{ object.situacao }} </td>
                     <td>R$<span>{{ object.valor }}</span></td>
+                    <td> {{ object.tipo }} </td>
                 </tr>
                 {% endfor %}
             </tbody>

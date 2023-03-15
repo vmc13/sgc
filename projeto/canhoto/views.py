@@ -13,3 +13,7 @@ def canhoto_detail(request, pk):
     obj = Canhoto.objects.get(pk=pk)
     context = {'object': obj}
     return render(request, template_name, context)
+
+def canhoto_add(request):
+    template_name = 'canhoto_form.html'
+    return render(request, template_name)
