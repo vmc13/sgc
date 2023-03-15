@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, ListView
 from .models import Canhoto
 from .forms import CanhotoForm
 
@@ -11,6 +11,12 @@ def canhoto_list(request):
         objects = objects.filter(codigo__icontains=search) #icontains pesquisa por tudo aquilo que contenha o que é pesquisado.
     context = {'object_list': objects}
     return render(request, template_name, context)
+
+
+class CanhotoList(ListView):
+    model = Canhoto
+    template_name = 'canhoto_list.html'
+    paginate_by = 10
 
 
 def canhoto_detail(request, pk):
