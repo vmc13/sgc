@@ -1,0 +1,8 @@
+body {
+    margin-top: 80px;
+}
+
+span.required:after {
+    content: "*";
+    color: red;
+}
