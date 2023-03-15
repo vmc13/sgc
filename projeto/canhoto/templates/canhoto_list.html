@@ -22,7 +22,9 @@
             <tbody>
                 {% for object in object_list %}
                 <tr>
-                    <td> {{ object.codigo }} </td>
+                    <td>
+                        <a href="{% url 'canhoto:canhoto_detail' object.pk %}">{{ object.codigo }}</a>
+                    </td>
                     <td> {{ object.data }} </td>
                     <td> {{ object.situacao }} </td>
                     <td>R$<span>{{ object.valor }}</span></td>
@@ -37,3 +39,4 @@
 </div>
 
 {% endblock content %}
+

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{% url 'canhoto:canhoto_list' %}">Voltar</a>
+<h1>
+    Canhoto {{ object }}
+    <span class="pull-right">
+        <a href="">
+            <button type="button" class="btn btn-success">
+                <span class="fa fa-pencil"> Editar</span>
+            </button>
+        </a>
+    </span>
+</h1>
+
+<div class="col-sm-6">
+    <table class="table table-user-information">
+        <tbody>
+            <tr>
+                <th class="text-left">Data</th>
+                <td> {{ object.data }} </td>
+            </tr>
+            <tr>
+                <th class="text-left">Situação</th>
+                <td> {{ object.situacao }} </td>
+            </tr>
+            <tr>
+                <th class="text-left">Valor</th>
+                <td>R$ {{ object.valor }} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

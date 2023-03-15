@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse_lazy
 
 # Create your models here.
 class Canhoto(models.Model):
@@ -11,4 +12,5 @@ class Canhoto(models.Model):
         ordering = ('codigo',)
 
     def __str__(self):
-        return f'{self.codigo}'
+        return f'{self.codigo} '
+    
