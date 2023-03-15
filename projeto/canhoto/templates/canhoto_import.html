@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block css %}
+{% endblock css %}
+
+{% block content %}
+
+<a href="{% url 'canhoto:canhoto_list' %}">Voltar</a>
+<h1>Importar CSV</h1> 
+
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input name="myfile" type="file" />
+  <button type="submit" class="btn btn-success">Upload</button>
+</form>
+
+{% endblock content %}
+
+

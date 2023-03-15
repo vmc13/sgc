@@ -8,5 +8,6 @@ urlpatterns = [
     path('<int:pk>', views.canhoto_detail, name='canhoto_detail'),
     path('add/', views.CanhotoCreate.as_view(), name='canhoto_add'),
     path('<int:pk>/edit/', views.CanhotoUpdate.as_view(), name='canhoto_edit'),
+    path('import/csv/', views.import_csv, name='import_csv'),
 ]
 

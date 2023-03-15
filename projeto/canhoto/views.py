@@ -1,4 +1,8 @@
+import csv
+import io
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from django.views.generic import CreateView, UpdateView, ListView
 from .models import Canhoto
 from .forms import CanhotoForm
@@ -39,3 +43,36 @@ class CanhotoUpdate(UpdateView):
     model = Canhoto
     template_name = 'canhoto_form.html'
     form_class = CanhotoForm
+
+def save_data(data):
+    '''
+    Salva os dados no bd
+    '''
+    aux = []
+    for item in data:
+        codigo = item.get('codigo')
+        data = item.get('data')
+        valor = item.get('valor')
+        tipo = item.get('tipo')
+        obj = Canhoto(
+            codigo=codigo,
+            data=data,
+            valor=valor,
+            tipo=tipo,
+        )
+        aux.append(obj)
+    Canhoto.objects.bulk_create(aux)
+
+def import_csv(request):
+    if request.method == 'POST' and request.FILES['myfile']:
+        myfile = request.FILES['myfile']
+        # Lendo arquivo InMemoryUploadedFile
+        file = myfile.read().decode('utf-8')
+        reader = csv.DictReader(io.StringIO(file))
+        # Gerando uma list comprehension
+        data = [line for line in reader]
+        save_data(data)
+        return HttpResponseRedirect(reverse('canhoto:canhoto_list'))
+
+    template_name = 'canhoto_import.html'
+    return render(request, template_name)
