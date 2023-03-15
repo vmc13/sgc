@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import CreateView
 from .models import Canhoto
+from .forms import CanhotoForm
 
 def canhoto_list(request):
     template_name = 'canhoto_list.html'
@@ -17,3 +19,8 @@ def canhoto_detail(request, pk):
 def canhoto_add(request):
     template_name = 'canhoto_form.html'
     return render(request, template_name)
+
+class CanhotoCreate(CreateView):
+    model = Canhoto
+    template_name = 'canhoto_form.html'
+    form_class = CanhotoForm

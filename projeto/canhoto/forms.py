@@ -5,4 +5,4 @@ class CanhotoForm(forms.ModelForm):
 
     class Meta:
         model = Canhoto
-        fiels = '__all__'
+        fields = '__all__'
