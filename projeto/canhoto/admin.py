@@ -8,5 +8,6 @@ class CanhotoAdmin(admin.ModelAdmin):
         'data',
         'valor',
         'tipo',
+        'conferencia',
     )
     search_fields=('codigo',)

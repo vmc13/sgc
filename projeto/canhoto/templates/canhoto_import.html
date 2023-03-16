@@ -1,20 +1,42 @@
 {% extends "base.html" %}
 
+(% load static %)
+
 {% load widget_tweaks %}
+
+{% block title %}
+{% endblock title %}
 
 {% block css %}
 {% endblock css %}
 
 {% block content %}
 
-<a href="{% url 'canhoto:canhoto_list' %}">Voltar</a>
-<h1>Importar CSV</h1> 
+<h1>
+  <i class="fa fa-exclamation-circle" style="color: #17A2B8;"></i>
+  Importar CSV
+</h1> 
 
-<form method="POST" enctype="multipart/form-data">
+<small style="font-size: 16px;">Importe seu arquivo de CSV aqui.</small>
+
+<form method="POST" enctype="multipart/form-data" style="margin: 2rem 0 2rem 0;">
   {% csrf_token %}
-  <input name="myfile" type="file" />
-  <button type="submit" class="btn btn-success">Upload</button>
+  <input name="myfile" type="file" /> <br>
+  
+  <div style="margin-top: 2rem;">
+    <button type="submit" class="btn btn-success">
+      <span class="fa fa-upload"></span>
+      Upload
+    </button>
+
+    <span class="pull-right">
+      <span class="fa fa-arrow-left"></span>
+      <a href="{% url 'canhoto:canhoto_list' %}" style="color: #000;">Voltar</a>
+    </span>
+  </div>
 </form>
+
+
 
 {% endblock content %}
 

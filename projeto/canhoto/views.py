@@ -31,17 +31,17 @@ def canhoto_detail(request, pk):
     return render(request, template_name, context)
 
 def canhoto_add(request):
-    template_name = 'canhoto_form.html'
+    template_name = 'canhoto_form_add.html'
     return render(request, template_name)
 
 class CanhotoCreate(CreateView):
     model = Canhoto
-    template_name = 'canhoto_form.html'
+    template_name = 'canhoto_form_add.html'
     form_class = CanhotoForm
 
 class CanhotoUpdate(UpdateView):
     model = Canhoto
-    template_name = 'canhoto_form.html'
+    template_name = 'canhoto_form_update.html'
     form_class = CanhotoForm
 
 def save_data(data):
@@ -54,11 +54,13 @@ def save_data(data):
         data = item.get('data')
         valor = item.get('valor')
         tipo = item.get('tipo')
+        conferencia = item.get('conferencia')
         obj = Canhoto(
             codigo=codigo,
             data=data,
             valor=valor,
             tipo=tipo,
+            conferencia=conferencia
         )
         aux.append(obj)
     Canhoto.objects.bulk_create(aux)

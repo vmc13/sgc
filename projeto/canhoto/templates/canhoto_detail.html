@@ -1,21 +1,28 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block css %}
+{% endblock css %}
+
 {% block content %}
 
-<a href="{% url 'canhoto:canhoto_list' %}">Voltar</a>
 <h1>
-    Canhoto {{ object }}
-    <span class="pull-right">
+    <i class="fa fa-info-circle" style="color: #17A2B8; margin-left: 1rem;"></i>
+    <span>Canhoto {{ object }}</span>
+    <span class="pull-right" style="margin-left: 20px;">
         <a href="{% url 'canhoto:canhoto_edit' object.pk %}">
-            <button type="button" class="btn btn-success">
-                <span class="fa fa-pencil"> Editar</span>
+            <button type="button" class="btn btn-info">
+                <span class="fa fa-pencil"></span>
+                Editar
             </button>
         </a>
     </span>
 </h1>
+<small style="font-size: 16px; margin-left: 1rem;">Todas as informações sobre o canhoto {{ object.codigo }}.</small>
 
-<div class="col-sm-6">
-    <table class="table table-user-information">
+<div class="col-sm-6" style="margin: 2rem 0 2rem 0;">
+    <table class="table table-bordered">
         <tbody>
             <tr>
                 <th class="text-left">Data</th>
@@ -29,8 +36,26 @@
                 <th class="text-left">Valor</th>
                 <td>R$ {{ object.valor }} </td>
             </tr>
+            <tr>
+                <th class="text-left">Tipo</th>
+                <td> {{ object.tipo }} </td>
+            </tr>
+            <tr>
+                <th class="text-left">Conferência</th>
+                <td>
+                    {% if object.conferencia %}
+                        <i class="fa fa-check-circle ok" style="color: green;"></i> <span>Conferido</span>
+                    {% else %}
+                        <i class="fa fa-minus-circle no" style="color: red;"></i> <span>Não conferido</span>
+                    {% endif %}
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>
+
+<span class="fa fa-arrow-left"></span>
+<a href="{% url 'canhoto:canhoto_list' %}" style="color: #000;">Voltar</a>
+
 
 {% endblock content %}

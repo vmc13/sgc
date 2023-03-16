@@ -2,6 +2,7 @@ body {
     margin-top: 80px;
 }
 
+/* ADD CANHOTO PAGE */
 span.required:after {
     content: "*";
     color: red;

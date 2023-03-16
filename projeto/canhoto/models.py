@@ -7,6 +7,7 @@ class Canhoto(models.Model):
     data = models.DateField()
     valor = models.DecimalField(max_digits=7, decimal_places=2)
     tipo = models.CharField(max_length=100, default='')
+    conferencia = models.BooleanField('conferência', default=False)
 
     class Meta:
         ordering = ('codigo',)

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% load static %}
+
+{% block css %}
+{% endblock css %}
+
+{% block content %}
+
+<h1>
+  <i class="fa fa-pencil" style="color: #17A2B8;"></i>
+  Editar canhoto {{ object.codigo }}
+</h1> 
+<small style="font-size: 16px;">Edite aqui o canhoto {{ object.codigo }}. </small>
+
+  <form method="POST" novalidate style="margin: 2rem 0 1rem 0;">
+    {% csrf_token %}
+    {% for field in form.visible_fields %}
+      <div class="form-group{% if field.errors %} has-error {% endif%}">
+        <label for="{{ field.id_for_label }}">
+          {% if field.field.required %}
+            <span class="required">{{ field.label }}: </span>
+          {% else %}
+            <span>{{ field.label }}:</span>
+          {% endif %}
+        </label>
+        {% render_field field class="form-control" %}
+        {% for error in field.errors %}
+          <span class="text-muted">{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+    <span>
+      <button type="submit" class="btn btn-success">
+        <span class="fa fa-check"></span>
+        Cadastrar
+      </button>
+
+      <span class="pull-right">
+          <span class="fa fa-arrow-left"></span>
+          <a href="{% url 'canhoto:canhoto_list' %}" style="color: #000;">Voltar</a>
+      </span>
+    </span>
+  </form>
+
+{% endblock content %}
+
+
