@@ -10,9 +10,9 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault" style="margin-right: 2rem;">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'core:index' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -26,7 +26,10 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Sair</button>
+            <span>
+                <i class="fa fa-user" style="color: #17A2B8;"></i>
+                <a href="#">User</a>
+            </span>
         </form>
     </div>
 </nav>

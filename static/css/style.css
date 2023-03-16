@@ -7,3 +7,29 @@ span.required:after {
     content: "*";
     color: red;
 }
+
+/* NAVBAR CSS */
+.navbar .navbar-brand{
+    margin-left: 5rem;
+    margin-right: 2rem;
+}
+
+.navbar .navbar-nav .nav-item{
+    font-size: 19px;
+}
+
+.navbar form {
+    margin-right: 5rem;
+}
+
+.navbar form a {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+}
+
+.navbar form i {
+    font-size: 1.8rem;
+    margin-right: 8px;
+}
