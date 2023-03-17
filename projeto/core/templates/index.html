@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock css %}
 
 {% block title %}
@@ -11,11 +12,11 @@
 
 {% block content %}
 
-<div class="jumbotron">
+<div class="jumbotron" style="margin-top: -20px;">
     <div class="container">
         <h1>Bem vindo!</h1>
         <small>Este é um sistema para gerenciamento de canhotos de notas fiscais</small>
-        <p><a href="https://github.com/vmc13/sgc" target="_blank">Veja no github</a></p>
+        <p><a href="https://github.com/vmc13/sgc" target="_blank">Clique aqui para ver no github</a></p>
     </div>
 </div>
 

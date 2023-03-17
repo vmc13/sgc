@@ -1,0 +1,35 @@
+body {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0,0,0,0.2)),
+        url("/static/img/index-bg.jpg");
+    background-size: cover;
+    color: #fff;
+}
+
+.jumbotron{
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8rem;
+}
+
+.jumbotron .container h1 {
+    font-size: 3rem;
+}
+
+.jumbotron .container small {
+    font-size: 1.5rem;
+}
+
+.jumbotron .container p a {
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+}
+.jumbotron .container p a:hover {
+    color: rgb(79, 79, 199);
+}
