@@ -1,7 +1,7 @@
 # Sistema Gerenciador de Canhotos
 
 ## Objetivo do projeto
-O projeto tem como objetivo principal automatizar o processo de conferência de canhotos de notas fiscais. Também atende necessidades de acesso, alteração, adição e arquivamento de dados dos canhotos fiscais.
+Automatização do processo de conferência de canhotos de notas fiscais
 ## Requisitos funcionais
 - Upload de arquivos CSV
 - Visualização, adição, e alteração de dados
