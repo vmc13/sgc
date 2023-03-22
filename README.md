@@ -34,7 +34,7 @@ python3 -m venv .venv
 .venv/Scripts/Activate
 
 # Instale as dependências
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
 # Gere uma nova SECRET_KEY
 python contrib/env_gen.py
