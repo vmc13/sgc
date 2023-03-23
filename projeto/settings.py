@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # apps terceiros
     'widget_tweaks',
     'crispy_forms',
+    'crispy_bootstrap4',
     # minhas apps
     'projeto.core',
     'projeto.canhoto',
@@ -49,7 +50,9 @@ INSTALLED_APPS = [
 ]
 
 # Crispy forms
-CRISPY_TEMPLATE_PACK = 'bootstrap'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
