@@ -3,7 +3,7 @@
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
 ## Objetivo do projeto
-O projeto tem como objetivo principal automatizar o processo de conferência de canhotos de notas fiscais. Também atende necessidades de acesso, alteração, adição e arquivamento de dados dos canhotos fiscais.
+Automatização do processo de conferência de canhotos de notas fiscais
 ## Requisitos funcionais
 - Upload de arquivos CSV
 - Visualização, adição, e alteração de dados
@@ -36,7 +36,7 @@ python3 -m venv .venv
 .venv/Scripts/Activate
 
 # Instale as dependências
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
 # Gere uma nova SECRET_KEY
 python contrib/env_gen.py
