@@ -1,5 +1,7 @@
 # Sistema Gerenciador de Canhotos
 
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+
 ## Objetivo do projeto
 O projeto tem como objetivo principal automatizar o processo de conferência de canhotos de notas fiscais. Também atende necessidades de acesso, alteração, adição e arquivamento de dados dos canhotos fiscais.
 ## Requisitos funcionais
@@ -52,3 +54,4 @@ python manage.py runserver
 - [django-widget-tweaks](https://pypi.org/project/django-widget-tweaks/)
 - [Class Based Views](https://ccbv.co.uk/)
 - [form-inline](https://felipefrizzo.github.io/post/form-inline/)
+- [django-crispy-forms](https://pypi.org/project/django-crispy-forms/)

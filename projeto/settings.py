@@ -41,10 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # apps terceiros
     'widget_tweaks',
+    'crispy_forms',
     # minhas apps
     'projeto.core',
     'projeto.canhoto',
+    'projeto.usuarios',
 ]
+
+# Crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -148,3 +153,9 @@ MESSAGE_TAGS = {
 # EMAILS
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST_USER = "vick.mendes1305@gmail.com.br"
+
+
+# Configurações de autenticação
+LOGIN_REDIRECT_URL = 'core:index'
+LOGGOUT_REDIRECT_URL = 'usuarios:login'
+LOGIN_URL = 'usuarios:login'
