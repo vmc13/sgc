@@ -1,7 +1,8 @@
 import csv
 import io
+from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import  render
 from django.urls import reverse
 from django.views.generic import CreateView, UpdateView, ListView
 from .models import Canhoto
@@ -12,7 +13,7 @@ def canhoto_list(request):
     objects = Canhoto.objects.all()
     search = request.GET.get('search')
     if search:
-        objects = objects.filter(codigo__icontains=search) #icontains pesquisa por tudo aquilo que contenha o que é pesquisado.
+        objects = objects.filter(data__icontains=search) #icontains pesquisa por tudo aquilo que contenha o que é pesquisado.
     context = {'object_list': objects}
     return render(request, template_name, context)
 
@@ -78,3 +79,16 @@ def import_csv(request):
 
     template_name = 'canhoto_import.html'
     return render(request, template_name)
+
+def export_csv(request):
+    header = (
+        'codigo', 'data', 'valor', 'tipo', 'conferencia',
+    )
+    canhotos = Canhoto.objects.all().values_list(*header)
+    with open('fix/canhotos_exportados.csv', 'w') as csvfile:
+        canhoto_writer = csv.writer(csvfile)
+        canhoto_writer.writerow(header)
+        for canhoto in canhotos:
+            canhoto_writer.writerow(canhoto)
+    messages.success(request, 'Canhotos exportados com sucesso!')
+    return HttpResponseRedirect(reverse('canhoto:canhoto_list'))

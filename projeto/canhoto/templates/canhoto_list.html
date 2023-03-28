@@ -11,6 +11,14 @@
 
 {% block content %}
 
+{% for message in messages %}
+    {% if 'success' in message.tags %}
+        <p class="alert alert-success" role="alert"><span style="font-weight: bold;" >{{ message }}</span></p>
+    {% else %}
+    <p class="alert alert-danger" role="alert"><span style="font-weight: bold;" >{{ message }}</span></p>
+    {% endif %}
+{% endfor %}
+
 <div class="page-header">
     <h1>
         <i class="fa fa-folder-open" style="color: #17A2B8;"></i>
@@ -28,7 +36,7 @@
 <div class="row" style="margin: 1.5rem 0 0 0;">
     <div class="col-sm-6">
         <form action="." method="get" class="form-inline">
-            <input class="form-control" type="text" name="search" id="search" placeholder="Buscar canhoto">
+            <input class="form-control" type="date" name="search" id="search" placeholder="Buscar canhoto">
             <button type="submit" class="btn btn-info" style="margin-left: 20px;">
                 <i class="fa fa-search"></i> Buscar
             </button>
@@ -76,8 +84,17 @@
     {% endif %}
 
 </div>
-
-{% include "includes/pagination.html" %}
+<!-- {% include "includes/pagination.html" %} -->
 
 {% endblock content %}
 
+<!-- 
+<script>
+    // Close alert after 2 seconds
+    window.setTimeout(function() {
+        $('.alert').fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    }, 2000);
+</script>
+ -->

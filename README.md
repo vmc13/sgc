@@ -50,6 +50,7 @@ python manage.py runserver
 
 ## Referências 
 - [python-decouple](https://pypi.org/project/python-decouple/)
+- [django-forms-tutorial](https://github.com/rg3915/django-forms-tutorial/blob/main/passo-a-passo.md)
 - [django-basic](https://github.com/rg3915/tutoriais/tree/master/django-basic)
 - [django-widget-tweaks](https://pypi.org/project/django-widget-tweaks/)
 - [Class Based Views](https://ccbv.co.uk/)

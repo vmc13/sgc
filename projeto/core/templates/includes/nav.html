@@ -19,9 +19,10 @@
                 <a class="nav-link" href="{% url 'canhoto:canhoto_list' %}">Canhotos</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Importar</a>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CSV</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="{% url 'canhoto:import_csv' %}">CSV</a>
+                    <a class="dropdown-item" href="{% url 'canhoto:import_csv' %}">Importar CSV</a>
+                    <a class="dropdown-item" href="{% url 'canhoto:export_csv' %}">Exportar CSV</a>
                 </div>
             </li>
         </ul>
