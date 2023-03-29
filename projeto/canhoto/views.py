@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.views.generic import CreateView, UpdateView, ListView
 from .models import Canhoto
 from .forms import CanhotoForm
+from django.core.files.storage import FileSystemStorage
 
 def canhoto_list(request):
     template_name = 'canhoto_list.html'
@@ -92,3 +93,11 @@ def export_csv(request):
             canhoto_writer.writerow(canhoto)
     messages.success(request, 'Canhotos exportados com sucesso!')
     return HttpResponseRedirect(reverse('canhoto:canhoto_list'))
+
+def export_csv(request):
+    if request.method == 'POST' and request.FILES['upload']:
+        upload = request.FILES['upload']
+        fss = FileSystemStorage()
+        file = fss.save(upload.name, upload)
+    messages.success(request, 'PDF importado com sucesso!')
+    return render(request, 'upload_pdf.html')

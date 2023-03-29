@@ -18,3 +18,5 @@ class Canhoto(models.Model):
     def get_absolute_url(self):
         return reverse_lazy('canhoto:canhoto_detail', kwargs={'pk':self.pk})
     
+class Movies(models.Model):
+   file = models.FileField(upload_to='scanning_pdfs/')
