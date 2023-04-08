@@ -8,7 +8,7 @@ Automatização do processo de conferência de canhotos de notas fiscais
 - Upload de arquivos CSV
 - Visualização, adição, e alteração de dados
 - Conferência de dados
-- Sistema de autenticação de usuário
+- Sistema de autenticação de usuários
 
 
 ## Tecnologias utilizadas
