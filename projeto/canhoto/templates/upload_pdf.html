@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-    <title>Upload PDF</title>
+<title>Upload PDF</title>
 {% endblock title %}
 
 {% block css %}
@@ -19,16 +19,27 @@
     {% endif %}
 {% endfor %}
 
+<!--Simple Form-->
+<h1 class="my-4">
+    <i class="fa fa-upload" style="color: rgb(51, 50, 50);"></i>
+    Upload PDF de canhotos escaneados
+</h1>
+<form method="post" enctype="multipart/form-data" style="margin: 2rem 0 2rem 0;">
+    {% csrf_token %}
+    <input type="file" name="upload" accept=".doc, .docx, .pdf, .txt">
+    <br>
 
-<div class="container">
+    <div style="margin-top: 2rem;">
+        <button type="submit" class="btn btn-success">
+            <span class="fa fa-upload"></span>
+            Upload
+        </button>
 
-    <!--Simple Form-->
-    <h2 class="my-4">Upload PDF de canhotos escaneados</h2>
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-          <input type="file" name="upload" accept=".doc, .docx, .pdf, .txt">
-          <br>
-          <button class="btn btn-dark my-4" type="submit">Submit</button>
-    </form>
+        <span class="pull-right">
+            <span class="fa fa-arrow-left"></span>
+            <a href="{% url 'canhoto:canhoto_list' %}" style="color: #000;">Voltar</a>
+        </span>
+    </div>
+</form>
 
 {% endblock content %}

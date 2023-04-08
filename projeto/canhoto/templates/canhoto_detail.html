@@ -8,11 +8,11 @@
 {% block content %}
 
 <h1>
-    <i class="fa fa-info-circle" style="color: #17A2B8; margin-left: 1rem;"></i>
+    <i class="fa fa-info-circle" style="color: rgb(51, 50, 50);margin-left: 1rem;"></i>
     <span>Canhoto {{ object }}</span>
     <span class="pull-right" style="margin-left: 20px;">
         <a href="{% url 'canhoto:canhoto_edit' object.pk %}">
-            <button type="button" class="btn btn-info">
+            <button type="button" class="btn btn-dark">
                 <span class="fa fa-pencil"></span>
                 Editar
             </button>

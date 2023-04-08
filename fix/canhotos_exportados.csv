@@ -1,2 +1,9 @@
 codigo,data,valor,tipo,conferencia
+201,2023-04-07,500.00,Transferência,True
+202,2023-03-15,12.50,Venda,False
+203,2023-03-15,12.50,Venda,True
+204,2023-03-15,12.50,Venda,False
+205,2023-03-15,12.50,Venda,False
+206,2023-03-15,12.50,Venda,True
+301,2023-03-15,563.00,Devolução,False
 2803,2023-03-28,10000.00,Venda,True

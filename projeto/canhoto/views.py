@@ -94,10 +94,10 @@ def export_csv(request):
     messages.success(request, 'Canhotos exportados com sucesso!')
     return HttpResponseRedirect(reverse('canhoto:canhoto_list'))
 
-def export_csv(request):
+def upload_pdf(request):
     if request.method == 'POST' and request.FILES['upload']:
         upload = request.FILES['upload']
         fss = FileSystemStorage()
         file = fss.save(upload.name, upload)
-    messages.success(request, 'PDF importado com sucesso!')
+        messages.success(request, 'PDFs importados com sucesso!')
     return render(request, 'upload_pdf.html')
