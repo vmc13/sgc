@@ -46,6 +46,9 @@ python manage.py migrate
 
 # Execute o código
 python manage.py runserver
+
+# Rota
+/auth/login
 ```
 
 ## Referências 
