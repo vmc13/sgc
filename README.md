@@ -44,10 +44,13 @@ python contrib/env_gen.py
 # Rode as migrações
 python manage.py migrate
 
+# Crie um superusuário para acesso ao sistema
+python manage.py createsuperuser
+
 # Execute o código
 python manage.py runserver
 
-# Rota
+# Rota inicial
 /auth/login
 ```
 
