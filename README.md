@@ -47,7 +47,7 @@ python manage.py migrate
 # Crie um superusuário para acesso ao sistema
 python manage.py createsuperuser
 
-# Execute o código
+# Inicialize o servidor
 python manage.py runserver
 
 # Rota inicial
